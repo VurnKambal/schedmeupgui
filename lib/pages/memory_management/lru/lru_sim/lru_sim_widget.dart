@@ -144,7 +144,7 @@ class _LruSimWidgetState extends State<LruSimWidget> {
                                   ),
                         ),
                         Text(
-                          'Fails: ${FFAppState().failRate} Success: ${FFAppState().successRate}',
+                          'Fails: ${FFAppState().failRate.toStringAsFixed(2)} Success: ${FFAppState().successRate.toStringAsFixed(2)}',
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(

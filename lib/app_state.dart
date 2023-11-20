@@ -214,7 +214,7 @@ class FFAppState extends ChangeNotifier {
   double _successRate = 0;
   double get successRate => _successRate;
   set successRate(double _value) {
-    _failRate = _value;
+    _successRate = _value;
   }
 
   double _averageTurnaroundTime = 0;

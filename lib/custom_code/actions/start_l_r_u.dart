@@ -29,12 +29,13 @@ Future startLRU(int frames, List<String> pageRequests) async {
   }
 
   cache.display();
+  int pageInterrupts = FFAppState().pageInterrupts;
   FFAppState().update(() {
-    FFAppState().failRate =
-        (FFAppState().pageInterrupts / pageRequests.length) * 100;
+    FFAppState().failRate = (pageInterrupts / pageRequests.length) * 100;
   });
   FFAppState().update(() {
-    FFAppState().successRate = 100 - FFAppState().failRate;
+    FFAppState().successRate =
+        100 - ((pageInterrupts / pageRequests.length) * 100);
   });
 }
 
